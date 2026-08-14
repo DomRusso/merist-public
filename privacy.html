@@ -4,49 +4,96 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Merist — Privacy Policy</title>
-    <style>
-      body { font-family: Georgia, serif; max-width: 42rem; margin: 3rem auto; padding: 0 1.25rem; line-height: 1.55; color: #111; }
-      a { color: #111; }
-      nav { font-family: system-ui, sans-serif; font-size: 0.9rem; margin-bottom: 2rem; }
-      nav a { margin-right: 1rem; }
-    </style>
+    <meta
+      name="description"
+      content="Privacy Policy for Merist Content Intelligence. The service stores authorized platform identity, permitted analytics, and encrypted tokens. It does not collect platform passwords."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./merist-mark.svg" type="image/svg+xml" />
   </head>
   <body>
-    <nav>
-      <a href="./index.html">Merist</a>
-      <a href="./terms.html">Terms</a>
-      <a href="./privacy.html">Privacy</a>
-    </nav>
-    <h1>Privacy Policy</h1>
-    <p>Last updated: 14 August 2026</p>
-    <p>
-      Merist Content Intelligence retrieves official analytics for Merist-owned
-      social accounts after operator authorization. This policy describes what
-      that service stores.
-    </p>
-    <h2>Data we collect</h2>
-    <ul>
-      <li>Account identifiers the platform returns after official OAuth (for example account ID and display name).</li>
-      <li>Content identifiers and performance metrics the platform returns (for example views, likes, comments, shares when available).</li>
-      <li>OAuth access and refresh tokens, stored only on Merist’s servers, encrypted, and never shown on these pages or in the product screens.</li>
-    </ul>
-    <h2>Data we do not collect</h2>
-    <ul>
-      <li>Platform passwords.</li>
-      <li>Payment card numbers.</li>
-      <li>Metrics a platform does not actually return. Missing values stay missing; they are not filled with zero.</li>
-    </ul>
-    <h2>Use</h2>
-    <p>
-      Data is used to measure Merist content and to improve later creative
-      decisions. It is not sold. Publishing permissions are not requested.
-    </p>
-    <h2>Retention and revocation</h2>
-    <p>
-      Tokens can be deleted by disconnecting the platform connection. You can
-      also revoke the app in TikTok, Google, or Meta account settings.
-    </p>
-    <h2>Contact</h2>
-    <p>Public handle: @meristhq</p>
+    <header class="site-header">
+      <a class="brand" href="./index.html">
+        <img src="./merist-mark.svg" width="36" height="36" alt="" />
+        Merist
+      </a>
+      <nav aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./product.html">Product</a>
+        <a href="./how-it-works.html">How it works</a>
+        <a href="./platforms.html">Platforms</a>
+        <a href="./security.html">Security</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Privacy Policy</h1>
+      <p>Last updated: 14 August 2026</p>
+      <p>
+        Merist Content Intelligence retrieves official analytics for social
+        accounts after the account owner authorizes access. This policy describes
+        what that service stores and how it is used.
+      </p>
+      <h2>Data we collect</h2>
+      <ul>
+        <li>
+          Account identifiers the platform returns after official OAuth, such as
+          an account ID, display name, and public handle when provided.
+        </li>
+        <li>
+          Content identifiers and performance metrics the platform returns, such
+          as views, likes, comments, and shares when available.
+        </li>
+        <li>
+          OAuth access and refresh tokens issued by the platform. These are stored
+          only on Merist’s servers, encrypted, and are not shown on these pages
+          or in ordinary product screens.
+        </li>
+      </ul>
+      <h2>Data we do not collect</h2>
+      <ul>
+        <li>Platform passwords.</li>
+        <li>Payment card numbers.</li>
+        <li>
+          Metrics a platform does not actually return. Missing values stay
+          missing; they are not filled with zero.
+        </li>
+      </ul>
+      <h2>How we obtain data</h2>
+      <p>
+        Data comes from authorized third-party platforms (including YouTube,
+        TikTok, and Instagram when connected) after the account owner completes
+        that platform’s official authorization. Merist does not scrape passwords
+        or use unofficial logins.
+      </p>
+      <h2>Use</h2>
+      <p>
+        Data is used to measure published content, organize performance
+        information, compare content, and support later creative decisions. It
+        is not sold. Publishing permissions are not requested.
+      </p>
+      <h2>Retention and revocation</h2>
+      <p>
+        Tokens can be deleted by disconnecting the platform connection in
+        Merist. You can also revoke the app in TikTok, Google, or Meta account
+        settings. After disconnect or revocation, Merist cannot retrieve new
+        analytics for that account.
+      </p>
+      <h2>Contact</h2>
+      <p>Public handle: @meristhq</p>
+    </main>
+    <footer class="site-footer">
+      <nav aria-label="Footer">
+        <a href="./index.html">Home</a>
+        <a href="./product.html">Product</a>
+        <a href="./how-it-works.html">How it works</a>
+        <a href="./platforms.html">Platforms</a>
+        <a href="./security.html">Security</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+      <p class="mute">© 2026 Merist · Public handle @meristhq</p>
+    </footer>
   </body>
 </html>

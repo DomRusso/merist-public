@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Security and data handling — Merist Content Intelligence</title>
+    <meta
+      name="description"
+      content="Merist Content Intelligence uses official OAuth, stores tokens encrypted on Merist servers, does not collect platform passwords, and does not request publishing permission."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./merist-mark.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html">
+        <img src="./merist-mark.svg" width="36" height="36" alt="" />
+        Merist
+      </a>
+      <nav aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./product.html">Product</a>
+        <a href="./how-it-works.html">How it works</a>
+        <a href="./platforms.html">Platforms</a>
+        <a href="./security.html">Security</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+    </header>
+    <main>
+      <p class="kicker">Security</p>
+      <h1>Security and data handling</h1>
+      <p class="lede">
+        Merist Content Intelligence is designed so that platform access is
+        granted by the account owner, limited to analytics, and revocable.
+      </p>
+      <h2>Official authorization</h2>
+      <p>
+        Account connections use each platform’s official OAuth or equivalent
+        authorization. Merist does not ask for, collect, or store platform
+        passwords.
+      </p>
+      <h2>Read-only analytics</h2>
+      <p>
+        The product retrieves account identity and content performance metrics
+        that the authorized platform returns. It does not request permission to
+        publish, upload, edit, or delete content.
+      </p>
+      <h2>Credentials and tokens</h2>
+      <p>
+        When a platform issues access and refresh tokens, those tokens are stored
+        on Merist’s servers and encrypted at rest. They are not displayed on
+        these public pages or in ordinary product screens.
+      </p>
+      <h2>Data obtained from platforms</h2>
+      <p>
+        Typical permitted fields include account identifiers, display names, and
+        performance metrics such as views, likes, comments, and shares when the
+        platform provides them. Metrics a platform does not return stay missing.
+        They are not filled with zero.
+      </p>
+      <h2>Disconnection and revocation</h2>
+      <p>
+        An operator can disconnect a platform inside Merist, which removes the
+        stored tokens for that connection. The account owner can also revoke the
+        app in TikTok, Google, or Meta account settings. After revocation,
+        Merist cannot retrieve new analytics for that account.
+      </p>
+      <h2>Use of the data</h2>
+      <p>
+        Data is used to measure Merist content and to inform later creative
+        decisions. It is not sold. See the
+        <a href="./privacy.html">Privacy Policy</a> and
+        <a href="./terms.html">Terms of Service</a> for the governing statements.
+      </p>
+    </main>
+    <footer class="site-footer">
+      <nav aria-label="Footer">
+        <a href="./index.html">Home</a>
+        <a href="./product.html">Product</a>
+        <a href="./how-it-works.html">How it works</a>
+        <a href="./platforms.html">Platforms</a>
+        <a href="./security.html">Security</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+      <p class="mute">© 2026 Merist · Public handle @meristhq</p>
+    </footer>
+  </body>
+</html>

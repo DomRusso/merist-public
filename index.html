@@ -3,32 +3,84 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Merist</title>
-    <style>
-      body { font-family: Georgia, serif; max-width: 42rem; margin: 3rem auto; padding: 0 1.25rem; line-height: 1.55; color: #111; }
-      a { color: #111; }
-      nav { font-family: system-ui, sans-serif; font-size: 0.9rem; margin-bottom: 2rem; }
-      nav a { margin-right: 1rem; }
-    </style>
+    <title>Merist — Content Intelligence</title>
+    <meta
+      name="description"
+      content="Merist Content Intelligence helps operators connect authorized social accounts, collect permitted analytics, and learn from published content. It does not post on your behalf."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./merist-mark.svg" type="image/svg+xml" />
   </head>
   <body>
-    <nav>
-      <a href="./index.html">Merist</a>
-      <a href="./terms.html">Terms</a>
-      <a href="./privacy.html">Privacy</a>
-    </nav>
-    <h1>Merist</h1>
-    <p>
-      Merist is a media brand that helps operators choose and use AI tools with
-      evidence, not hype. Public content is published as <strong>@meristhq</strong>
-      on YouTube, TikTok, and Instagram.
-    </p>
-    <p>
-      Merist Content Intelligence is an analytics product. It connects
-      to official platform APIs in read-only mode so Merist can learn from
-      published content. It does not post, upload, or manage comments on your
-      behalf.
-    </p>
-    <p>This page is the public service landing page for that product.</p>
+    <header class="site-header">
+      <a class="brand" href="./index.html">
+        <img src="./merist-mark.svg" width="36" height="36" alt="" />
+        Merist
+      </a>
+      <nav aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./product.html">Product</a>
+        <a href="./how-it-works.html">How it works</a>
+        <a href="./platforms.html">Platforms</a>
+        <a href="./security.html">Security</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+    </header>
+    <main>
+      <p class="kicker">Merist Content Intelligence</p>
+      <h1>Learn from published content with authorized, read-only analytics.</h1>
+      <p class="lede">
+        Merist is a media brand that helps operators choose and use AI tools with
+        evidence, not hype. Public content is published as <strong>@meristhq</strong>
+        on YouTube, TikTok, and Instagram.
+      </p>
+      <p>
+        Merist Content Intelligence is the product behind that learning loop. It
+        helps operators connect social accounts they are authorized to use, collect
+        the performance data those platforms permit, organize that information,
+        compare content, and make better decisions about what to create next.
+      </p>
+      <p class="note">
+        Connected platforms are authorized by the account owner through each
+        platform’s official sign-in. Merist does not collect platform passwords
+        and does not post, upload, or delete content.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <h3>Connect authorized accounts</h3>
+          <p>The account owner signs in with the platform and grants analytics access.</p>
+        </article>
+        <article class="card">
+          <h3>Collect permitted analytics</h3>
+          <p>Merist reads identity and performance metrics the platform actually returns.</p>
+        </article>
+        <article class="card">
+          <h3>Organize and compare</h3>
+          <p>Results are grouped by content so operators can see what happened after publish.</p>
+        </article>
+        <article class="card">
+          <h3>Support better decisions</h3>
+          <p>Evidence from prior posts informs later creative choices. Missing metrics stay missing.</p>
+        </article>
+      </div>
+      <p>
+        <a class="cta" href="./product.html">Product details</a>
+        <a class="cta" href="./how-it-works.html">How it works</a>
+        <a class="cta" href="./security.html">Security and data handling</a>
+      </p>
+    </main>
+    <footer class="site-footer">
+      <nav aria-label="Footer">
+        <a href="./index.html">Home</a>
+        <a href="./product.html">Product</a>
+        <a href="./how-it-works.html">How it works</a>
+        <a href="./platforms.html">Platforms</a>
+        <a href="./security.html">Security</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+      <p class="mute">© 2026 Merist · Public handle @meristhq</p>
+    </footer>
   </body>
 </html>
