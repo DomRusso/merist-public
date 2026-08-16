@@ -9,3 +9,16 @@ Public product website for Merist Content Intelligence.
 - [Security and data handling](security.html)
 - [Terms of Service](terms.html)
 - [Privacy Policy](privacy.html)
+- [Alpha AORE public info](alpha/index.html)
+- [Alpha AORE Terms](alpha/terms.html)
+- [Alpha AORE Privacy](alpha/privacy.html)
+
+After pushing this folder to `DomRusso/merist-public`, public URLs are:
+
+- `https://domrusso.github.io/merist-public/`
+- `https://domrusso.github.io/merist-public/alpha/`
+- `https://domrusso.github.io/merist-public/alpha/terms.html`
+- `https://domrusso.github.io/merist-public/alpha/privacy.html`
+
+Alpha pages must not be described as Merist. They exist so the Alpha X
+Developer App has an honest Website / Terms / Privacy URL.
