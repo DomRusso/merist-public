@@ -76,6 +76,7 @@
       <p>
         <a
           class="cta"
+          id="pe01-cta"
           href="https://buy.polar.sh/polar_cl_qVHsq5DbaYZNw0qnJcc0uGvCL1T2GMUl6Dh4W0gmCKs?utm_source=alpha-aore&amp;utm_medium=github-pages&amp;utm_campaign=pe-01&amp;utm_content=alpha-public-page"
           >Open the $9 Polar checkout</a
         >
@@ -94,5 +95,18 @@
       </nav>
       <p class="mute">© 2026 Alpha AORE · Intelligence identity @alphaAORE · Not Merist</p>
     </footer>
+    <script>
+      (function () {
+        var a = document.getElementById("pe01-cta");
+        if (!a) return;
+        var page = new URL(window.location.href);
+        var dest = new URL(a.getAttribute("href"));
+        ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach(function (key) {
+          var value = page.searchParams.get(key);
+          if (value) dest.searchParams.set(key, value);
+        });
+        a.href = dest.toString();
+      })();
+    </script>
   </body>
 </html>
