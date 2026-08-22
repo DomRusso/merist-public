@@ -10,6 +10,7 @@ Public product website for Merist Content Intelligence.
 - [Terms of Service](terms.html)
 - [Privacy Policy](privacy.html)
 - [Alpha AORE public info](alpha/index.html)
+- [Alpha AORE 30th brief](alpha/pe-01.html)
 - [Alpha AORE Terms](alpha/terms.html)
 - [Alpha AORE Privacy](alpha/privacy.html)
 
