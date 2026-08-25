@@ -6,7 +6,7 @@
     <title>Product — Merist Content Intelligence</title>
     <meta
       name="description"
-      content="Merist Content Intelligence is a read-only analytics product for authorized social accounts. It organizes permitted performance data to support content decisions."
+      content="Merist Content Intelligence helps operators research opportunities, create content, connect authorized social accounts, publish or upload where permitted, and measure performance on supported platforms."
     />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="./merist-mark.svg" type="image/svg+xml" />
@@ -19,62 +19,131 @@
       </a>
       <nav aria-label="Primary">
         <a href="./index.html">Home</a>
-        <a href="./product.html">Product</a>
+        <a href="./product.html" aria-current="page">Product</a>
         <a href="./how-it-works.html">How it works</a>
-        <a href="./platforms.html">Platforms</a>
+        <a href="./tiktok.html">TikTok</a>
+        <a href="./platforms.html">Integrations</a>
         <a href="./security.html">Security</a>
-        <a href="./terms.html">Terms</a>
         <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./support.html">Support</a>
       </nav>
     </header>
     <main>
       <p class="kicker">Product</p>
-      <h1>What Merist Content Intelligence does</h1>
+      <h1>What Merist Content Intelligence is</h1>
       <p class="lede">
-        The product is for operators who already publish content and need a
-        reliable record of how that content performed.
+        Merist Content Intelligence is a content operations product for operators
+        who research topics, create media, connect authorized social accounts,
+        publish or upload through official platform APIs where permitted, and
+        learn from real performance data.
       </p>
-      <h2>Features</h2>
+
+      <h2>Who it is for</h2>
+      <p>
+        Operators and creators who already run (or are building) a content
+        program on platforms such as YouTube, TikTok, Instagram, and X, and who
+        want an authorized, auditable path from opportunity → publish →
+        measurement → next decision.
+      </p>
+
+      <h2>Core features</h2>
       <ul>
         <li>
+          <strong>Content opportunity research.</strong> Identify subjects worth
+          covering and frame them for a specific audience and platform format.
+        </li>
+        <li>
+          <strong>Content creation &amp; media preparation.</strong> Move from
+          brief to scripted, media-ready assets intended for supported
+          destinations.
+        </li>
+        <li>
           <strong>Connect authorized social accounts.</strong> The account owner
-          uses the platform’s official authorization flow. Merist only proceeds
+          uses each platform’s official authorization flow. Merist only proceeds
           after that owner grants access.
         </li>
         <li>
-          <strong>Collect permitted content analytics.</strong> After authorization,
-          Merist retrieves account identity and content metrics that the platform
-          exposes to authorized apps.
+          <strong>Authorized analytics.</strong> After authorization, Merist
+          retrieves account identity and content metrics that the platform
+          exposes to authorized apps. Metrics a platform does not return stay
+          blank.
         </li>
         <li>
-          <strong>Organize performance information.</strong> Metrics are stored
-          against specific published items so operators can review them later.
+          <strong>Authorized publishing / upload (where scopes allow).</strong>
+          On supported platforms, Merist can upload content as a draft for
+          creator review or publish directly to the connected profile after the
+          user grants the required permissions and the platform has approved the
+          relevant app scopes. Merist does not post to accounts that never
+          authorized the app.
         </li>
         <li>
-          <strong>Compare content performance.</strong> Operators can see which
-          published items attracted views, likes, comments, shares, or other
-          metrics the platform actually provided.
+          <strong>Organize and compare performance.</strong> Results are stored
+          against specific published items so operators can review what happened
+          after publish.
         </li>
         <li>
-          <strong>Learn from previously published content.</strong> The point of
-          the product is evidence after publish, not guessing before it.
-        </li>
-        <li>
-          <strong>Support content decision-making.</strong> Organized results help
-          operators decide what to make next. Merist does not autonomously post
-          those decisions.
+          <strong>Support better next decisions.</strong> Evidence from prior
+          posts informs later creative choices. Merist does not invent metrics.
         </li>
       </ul>
-      <h2>What the product does not do</h2>
+
+      <h2>Product preview (not a live dashboard)</h2>
+      <p class="preview-label">Workflow demonstration — labeled preview</p>
+      <div class="workflow-preview">
+        <ol class="steps">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <div><strong>Research</strong> — find a content opportunity with a clear audience and claim.</div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <div><strong>Create</strong> — produce script and media suited to the destination format.</div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <div><strong>Authorize</strong> — connect the destination account through official OAuth.</div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">4</span>
+            <div><strong>Publish or upload</strong> — use granted platform scopes on the connected account only.</div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">5</span>
+            <div><strong>Measure</strong> — collect permitted performance fields the platform returns.</div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">6</span>
+            <div><strong>Optimize</strong> — feed evidence into the next opportunity cycle.</div>
+          </li>
+        </ol>
+        <p class="mute">
+          This is a product/workflow preview for public understanding. It is not
+          a live customer dashboard, fake analytics console, or simulated TikTok
+          approval status.
+        </p>
+      </div>
+
+      <h2>What Merist does not do</h2>
       <ul>
-        <li>It does not publish, upload, edit, or delete videos or comments.</li>
-        <li>It does not ask for posting permission.</li>
-        <li>It does not invent metrics. If a platform does not return a value, Merist leaves it blank.</li>
         <li>It does not collect platform passwords.</li>
+        <li>It does not post to arbitrary TikTok (or other) accounts that did not explicitly authorize the app.</li>
+        <li>It does not claim ownership of a user’s TikTok account or content merely because the account is connected.</li>
+        <li>It does not invent metrics or fill missing platform values with zeros.</li>
+        <li>It does not expose API keys, client secrets, or access tokens on this public website.</li>
       </ul>
+
+      <p class="note">
+        TikTok Content Posting scopes (<code>video.upload</code>,
+        <code>video.publish</code>) are integration capabilities Merist is adding
+        subject to TikTok authorization. Existing analytics/read capabilities are
+        available where the platform and user have already authorized them. See
+        <a href="./tiktok.html">TikTok integration</a>.
+      </p>
+
       <p>
-        Platform coverage and current limits are described on
-        <a href="./platforms.html">Supported platforms</a>. Data handling is
+        Platform coverage is described on
+        <a href="./platforms.html">Supported integrations</a>. Data handling is
         described on <a href="./security.html">Security</a> and in the
         <a href="./privacy.html">Privacy Policy</a>.
       </p>
@@ -84,10 +153,12 @@
         <a href="./index.html">Home</a>
         <a href="./product.html">Product</a>
         <a href="./how-it-works.html">How it works</a>
-        <a href="./platforms.html">Platforms</a>
+        <a href="./tiktok.html">TikTok</a>
+        <a href="./platforms.html">Integrations</a>
         <a href="./security.html">Security</a>
-        <a href="./terms.html">Terms</a>
         <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./support.html">Support</a>
       </nav>
       <p class="mute">© 2026 Merist · Public handle @meristhq</p>
     </footer>

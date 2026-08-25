@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Supported platforms — Merist Content Intelligence</title>
+    <title>Supported integrations — Merist Content Intelligence</title>
     <meta
       name="description"
-      content="Merist Content Intelligence can connect YouTube, TikTok, and Instagram through official authorization. Analytics are read-only. Publishing is not requested."
+      content="Merist Content Intelligence connects YouTube, TikTok, Instagram, and X through official authorization for analytics and, where scopes allow, authorized publishing or upload workflows."
     />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="./merist-mark.svg" type="image/svg+xml" />
@@ -21,60 +21,83 @@
         <a href="./index.html">Home</a>
         <a href="./product.html">Product</a>
         <a href="./how-it-works.html">How it works</a>
-        <a href="./platforms.html">Platforms</a>
+        <a href="./tiktok.html">TikTok</a>
+        <a href="./platforms.html" aria-current="page">Integrations</a>
         <a href="./security.html">Security</a>
-        <a href="./terms.html">Terms</a>
         <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./support.html">Support</a>
       </nav>
     </header>
     <main>
-      <p class="kicker">Platforms</p>
-      <h1>Supported platforms</h1>
+      <p class="kicker">Integrations</p>
+      <h1>Supported / connected platforms</h1>
       <p class="lede">
         Merist Content Intelligence can connect the following platforms through
         each platform’s official authorization. A platform is only used after
-        the account owner grants access.
+        the account owner grants access. Merist supports authorized analytics
+        and, where the platform and user have approved the relevant scopes,
+        authorized content publishing or upload workflows.
       </p>
-      <h2>YouTube</h2>
+
+      <h2 id="youtube">YouTube</h2>
       <p>
         Merist can connect a YouTube channel the operator is authorized to use.
         After official Google authorization, Merist may read channel identity
-        and permitted video analytics. Publishing and upload permissions are not
-        requested.
+        and permitted video analytics. Where upload or related scopes are
+        separately granted and enabled in the product, Merist may also use those
+        permissions only for the connected channel. Password collection is never
+        used.
       </p>
-      <h2>TikTok</h2>
+
+      <h2 id="tiktok">TikTok</h2>
       <p>
         Merist can connect a TikTok account the operator is authorized to use.
-        After official TikTok authorization, Merist may read basic profile
-        information, profile statistics the platform exposes, and public video
-        list/performance fields needed to measure published content.
+        After official TikTok authorization, Merist may use basic profile
+        information, profile statistics, and public video list / performance
+        fields for measurement workflows.
       </p>
       <p>
-        TikTok does not grant Merist permission to post, upload, or manage
-        videos. Some studio-only metrics may be unavailable; unavailable values
-        are left blank.
+        Merist is also adding TikTok Content Posting capabilities —
+        <code>video.upload</code> (draft upload for creator review where
+        applicable) and <code>video.publish</code> (Direct Post to the connected
+        profile) — subject to TikTok’s authorization of those scopes and the
+        user’s consent. Merist does not post to TikTok accounts that have not
+        authorized the app.
       </p>
-      <h2>Instagram</h2>
+      <p>
+        Full TikTok scope explanations:
+        <a href="./tiktok.html">TikTok integration</a>.
+      </p>
+
+      <h2 id="instagram">Instagram</h2>
       <p>
         Merist can connect an Instagram professional account through official
         Meta authorization when the operator enables that connection. After
-        authorization, Merist may read permitted media insights. Publishing
-        permission is not requested.
+        authorization, Merist may read permitted media insights and, where
+        publishing scopes are granted and enabled, may use those permissions
+        only for the connected professional account.
       </p>
-      <h2>X</h2>
+
+      <h2 id="x">X</h2>
       <p>
         Merist can connect the @meristhq X account through official X
-        authorization when the operator enables that connection. The current
-        connection requests identity and read scopes only. Direct Messages are
-        not requested. Publishing on X stays gated until a later operator
-        authorization and does not happen during connect.
+        authorization when the operator enables that connection. Identity and
+        read scopes support analytics workflows. Direct Messages are not
+        requested. Any write/publish capability on X remains limited to what the
+        operator has authorized in the product and does not happen from these
+        public pages.
       </p>
-      <h2>Shared boundary</h2>
+
+      <h2>Shared boundaries</h2>
       <ul>
         <li>Authorization always happens on the platform’s own sign-in page.</li>
-        <li>Merist requests analytics access, not posting access.</li>
+        <li>Users explicitly authorize each connected account.</li>
+        <li>Access is limited to granted permissions/scopes.</li>
         <li>The operator may disconnect a platform in Merist at any time.</li>
         <li>The account owner may revoke the app in that platform’s settings.</li>
+        <li>Merist does not post to accounts that never authorized the app.</li>
+        <li>Merist does not claim ownership of connected accounts or their content merely because they are connected.</li>
       </ul>
     </main>
     <footer class="site-footer">
@@ -82,10 +105,12 @@
         <a href="./index.html">Home</a>
         <a href="./product.html">Product</a>
         <a href="./how-it-works.html">How it works</a>
-        <a href="./platforms.html">Platforms</a>
+        <a href="./tiktok.html">TikTok</a>
+        <a href="./platforms.html">Integrations</a>
         <a href="./security.html">Security</a>
-        <a href="./terms.html">Terms</a>
         <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./support.html">Support</a>
       </nav>
       <p class="mute">© 2026 Merist · Public handle @meristhq</p>
     </footer>

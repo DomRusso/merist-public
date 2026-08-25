@@ -6,7 +6,7 @@
     <title>Merist — Privacy Policy</title>
     <meta
       name="description"
-      content="Privacy Policy for Merist Content Intelligence. The service stores authorized platform identity, permitted analytics, and encrypted tokens. It does not collect platform passwords."
+      content="Privacy Policy for Merist Content Intelligence. Describes authorized platform identity, analytics, content metadata, and secure handling of authorization tokens for connected-account publishing and analytics."
     />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="./merist-mark.svg" type="image/svg+xml" />
@@ -21,36 +21,61 @@
         <a href="./index.html">Home</a>
         <a href="./product.html">Product</a>
         <a href="./how-it-works.html">How it works</a>
-        <a href="./platforms.html">Platforms</a>
+        <a href="./tiktok.html">TikTok</a>
+        <a href="./platforms.html">Integrations</a>
         <a href="./security.html">Security</a>
+        <a href="./privacy.html" aria-current="page">Privacy</a>
         <a href="./terms.html">Terms</a>
-        <a href="./privacy.html">Privacy</a>
+        <a href="./support.html">Support</a>
       </nav>
     </header>
     <main>
       <h1>Privacy Policy</h1>
-      <p>Last updated: 16 August 2026</p>
+      <p>Last updated: 25 August 2026</p>
       <p>
-        Merist Content Intelligence retrieves official analytics for social
-        accounts after the account owner authorizes access. This policy describes
-        what that service stores and how it is used.
+        Merist Content Intelligence (“Merist,” “we”) provides connected-account
+        analytics and, where platform scopes allow, authorized content
+        publishing or upload workflows. This policy describes what data that
+        service may process and how it is used.
       </p>
-      <h2>Data we collect</h2>
+
+      <h2>Data we may process</h2>
       <ul>
         <li>
-          Account identifiers the platform returns after official OAuth, such as
-          an account ID, display name, and public handle when provided.
+          <strong>Account / profile data</strong> the platform returns after
+          official OAuth, such as an account ID, display name, and public handle
+          when provided. For TikTok, this may include basic profile information
+          available under scopes such as <code>user.info.basic</code>.
         </li>
         <li>
-          Content identifiers and performance metrics the platform returns, such
-          as views, likes, comments, and shares when available.
+          <strong>Performance / statistics data</strong> the platform returns,
+          such as account-level stats and content metrics (for example views,
+          likes, comments, and shares when available). For TikTok, this may
+          include data available under scopes such as
+          <code>user.info.stats</code>.
         </li>
         <li>
-          OAuth access and refresh tokens issued by the platform. These are stored
-          only on Merist’s servers, encrypted, and are not shown on these pages
-          or in ordinary product screens.
+          <strong>Video / content metadata</strong> for the authorized account,
+          such as content identifiers, titles/captions when provided, and
+          related public video information used for history and performance
+          workflows (for TikTok, including data available under
+          <code>video.list</code>).
+        </li>
+        <li>
+          <strong>Content submitted for publishing or upload</strong> when the
+          operator uses Merist to upload a draft or publish to a connected
+          account (for TikTok, under scopes such as <code>video.upload</code>
+          and/or <code>video.publish</code> when those scopes are authorized
+          and granted).
+        </li>
+        <li>
+          <strong>Authorization tokens / credentials</strong> issued by the
+          platform (access and refresh tokens). These are stored only on
+          Merist’s servers, encrypted at rest, and are not shown on these public
+          pages or in ordinary product screens.
         </li>
       </ul>
+
       <h2>Data we do not collect</h2>
       <ul>
         <li>Platform passwords.</li>
@@ -60,39 +85,65 @@
           missing; they are not filled with zero.
         </li>
       </ul>
+
       <h2>How we obtain data</h2>
       <p>
         Data comes from authorized third-party platforms (including YouTube,
         TikTok, Instagram, and X when connected) after the account owner completes
-        that platform’s official authorization. Merist does not scrape passwords
-        or use unofficial logins.
+        that platform’s official authorization, and from content the operator
+        submits for connected-account publishing or upload. Merist does not
+        scrape passwords or use unofficial logins.
       </p>
+
       <h2>Use</h2>
       <p>
-        Data is used to measure published content, organize performance
-        information, compare content, and support later creative decisions. It
-        is not sold. X Direct Messages are not requested. Publishing on X stays
-        gated until a separate operator authorization; this website does not post.
+        Data is used to provide connected-account publishing and analytics
+        functionality: identifying the authorized profile, measuring published
+        content, organizing performance information, comparing content, uploading
+        or publishing to the connected account when scopes allow, and supporting
+        later creative decisions. It is not sold. X Direct Messages are not
+        requested. Merist does not post to accounts that have not authorized the
+        app.
       </p>
+
+      <h2>TikTok-specific notes</h2>
+      <p>
+        When a TikTok account is connected, Merist may process TikTok profile
+        data, video/content metadata, and performance/statistics data needed for
+        the product features described on the
+        <a href="./tiktok.html">TikTok integration</a> page. Authorization
+        tokens are handled securely and are not publicly exposed. Users may
+        revoke TikTok authorization in TikTok’s settings and may disconnect
+        TikTok inside Merist.
+      </p>
+
       <h2>Retention and revocation</h2>
       <p>
         Tokens can be deleted by disconnecting the platform connection in
-        Merist.         You can also revoke the app in TikTok, Google, Meta, or X account
+        Merist. You can also revoke the app in TikTok, Google, Meta, or X account
         settings. After disconnect or revocation, Merist cannot retrieve new
-        analytics for that account.
+        analytics or perform publishing actions for that account using the
+        revoked grant.
       </p>
-      <h2>Contact</h2>
-      <p>Public handle: @meristhq</p>
+
+      <h2>Contact for privacy / data questions</h2>
+      <p>
+        Contact Merist through the public handle
+        <strong>@meristhq</strong> on TikTok, YouTube, Instagram, or X. See also
+        <a href="./support.html">Support</a>.
+      </p>
     </main>
     <footer class="site-footer">
       <nav aria-label="Footer">
         <a href="./index.html">Home</a>
         <a href="./product.html">Product</a>
         <a href="./how-it-works.html">How it works</a>
-        <a href="./platforms.html">Platforms</a>
+        <a href="./tiktok.html">TikTok</a>
+        <a href="./platforms.html">Integrations</a>
         <a href="./security.html">Security</a>
-        <a href="./terms.html">Terms</a>
         <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./support.html">Support</a>
       </nav>
       <p class="mute">© 2026 Merist · Public handle @meristhq</p>
     </footer>

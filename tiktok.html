@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TikTok integration — Merist Content Intelligence</title>
+    <meta
+      name="description"
+      content="Merist connects authorized TikTok accounts via OAuth for analytics and, subject to TikTok approval, Content Posting scopes including video.upload and video.publish. Merist does not post to unauthorized accounts."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./merist-mark.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html">
+        <img src="./merist-mark.svg" width="36" height="36" alt="" />
+        Merist
+      </a>
+      <nav aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./product.html">Product</a>
+        <a href="./how-it-works.html">How it works</a>
+        <a href="./tiktok.html" aria-current="page">TikTok</a>
+        <a href="./platforms.html">Integrations</a>
+        <a href="./security.html">Security</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./support.html">Support</a>
+      </nav>
+    </header>
+    <main>
+      <p class="kicker">TikTok</p>
+      <h1>TikTok integration</h1>
+      <p class="lede">
+        An authorized TikTok user can connect their TikTok account to Merist
+        using TikTok’s official authorization / OAuth flow. Merist then uses
+        only the scopes TikTok and that user approve.
+      </p>
+
+      <p class="note">
+        Merist does <strong>not</strong> post to arbitrary TikTok accounts.
+        Publishing and upload actions only apply to accounts that have
+        explicitly authorized the Merist app. Merist does not claim ownership of
+        a user’s TikTok account or content merely because the account is
+        connected.
+      </p>
+
+      <h2>How connection works</h2>
+      <ol>
+        <li>The operator starts a TikTok connect flow inside Merist.</li>
+        <li>TikTok presents its official authorization screen with the requested scopes.</li>
+        <li>The TikTok account owner reviews and approves (or denies) those permissions.</li>
+        <li>After approval, Merist can use the granted capabilities for that connected account only.</li>
+        <li>The owner can revoke Merist in TikTok’s account settings at any time; the operator can also disconnect inside Merist.</li>
+      </ol>
+
+      <h2>Requested TikTok capabilities</h2>
+      <dl class="scope-list">
+        <dt><code>user.info.basic</code></dt>
+        <dd>
+          Used to identify the authorized TikTok profile and display basic
+          account information.
+        </dd>
+        <dt><code>user.info.stats</code></dt>
+        <dd>
+          Used to retrieve account-level performance / statistical data available
+          through TikTok.
+        </dd>
+        <dt><code>video.list</code></dt>
+        <dd>
+          Used to retrieve the authorized account’s public TikTok video
+          information for content history and performance workflows.
+        </dd>
+        <dt><code>video.upload</code></dt>
+        <dd>
+          Used to upload authorized Merist-generated content to TikTok as a draft
+          for further creator review, editing, or posting where applicable.
+        </dd>
+        <dt><code>video.publish</code></dt>
+        <dd>
+          Used to directly publish authorized content to the connected TikTok
+          profile after the user has granted the required TikTok permissions.
+        </dd>
+      </dl>
+
+      <h2>Analytics / performance workflow</h2>
+      <p>
+        Where TikTok has authorized the relevant read/analytics capabilities and
+        the user has connected their account, Merist can organize permitted
+        profile, stats, and video-list information so operators can review how
+        published content performed and decide what to create next.
+      </p>
+      <p>
+        <span class="pill">Currently available where authorized</span>
+        Analytics and read capabilities depend on TikTok’s grant and the user’s
+        approved scopes. Unavailable fields stay blank.
+      </p>
+
+      <h2>Publishing workflow</h2>
+      <p>
+        Merist’s content loop prepares media and, when posting scopes are
+        approved and granted, can:
+      </p>
+      <ul>
+        <li>Upload content to the connected TikTok account as a draft (<code>video.upload</code>), or</li>
+        <li>Directly publish to that connected profile (<code>video.publish</code>).</li>
+      </ul>
+      <p>
+        <span class="pill">Subject to TikTok authorization</span>
+        Direct Post and Upload are integration capabilities Merist is adding.
+        Live use of <code>video.publish</code> and <code>video.upload</code>
+        depends on TikTok’s authorization of those scopes and the user’s
+        consent. This page does not claim those posting scopes are already live
+        if TikTok review is still pending.
+      </p>
+
+      <h2>Security boundaries</h2>
+      <ul>
+        <li>Authorization happens on TikTok’s own pages.</li>
+        <li>Merist does not collect TikTok passwords.</li>
+        <li>Access tokens / refresh tokens are handled securely on Merist servers and are not publicly exposed.</li>
+        <li>Actions stay within granted scopes on the connected account only.</li>
+      </ul>
+
+      <p>
+        Related pages:
+        <a href="./how-it-works.html">How it works</a> ·
+        <a href="./platforms.html">All integrations</a> ·
+        <a href="./privacy.html">Privacy Policy</a> ·
+        <a href="./security.html">Security</a>
+      </p>
+    </main>
+    <footer class="site-footer">
+      <nav aria-label="Footer">
+        <a href="./index.html">Home</a>
+        <a href="./product.html">Product</a>
+        <a href="./how-it-works.html">How it works</a>
+        <a href="./tiktok.html">TikTok</a>
+        <a href="./platforms.html">Integrations</a>
+        <a href="./security.html">Security</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./support.html">Support</a>
+      </nav>
+      <p class="mute">© 2026 Merist · Public handle @meristhq</p>
+    </footer>
+  </body>
+</html>
