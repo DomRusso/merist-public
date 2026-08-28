@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pokémon sealed break-even calculator — ask vs sold (Alpha AORE)</title>
+    <meta
+      name="description"
+      content="Free fee-aware break-even calculator for Pokémon sealed resale. Asking price is not a sold. Labels ESTIMATE math — not investment advice."
+    />
+    <link rel="canonical" href="https://domrusso.github.io/merist-public/alpha/calculator.html" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html">Alpha AORE</a>
+      <nav aria-label="Primary">
+        <a href="./index.html">About</a>
+        <a href="./pe-01.html">30th brief</a>
+        <a href="./calculator.html" aria-current="page">Calculator</a>
+        <a href="./30th-celebration-release.html">Release facts</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+    </header>
+    <main>
+      <p class="kicker">Alpha AORE · Free tool · Educational</p>
+      <h1>Sealed break-even calculator</h1>
+      <p class="lede">
+        A listing screenshot is an <strong>ask</strong>. This worksheet uses labeled
+        <strong>ESTIMATE</strong> fee assumptions — not your marketplace invoice.
+      </p>
+      <div class="callout">
+        <h2>Assumptions (labeled)</h2>
+        <ul>
+          <li>Marketplace fee: <strong>13.6% + $0.40</strong> <span class="mute">ESTIMATE</span></li>
+          <li>Outbound ship + pack: <strong>$10</strong> <span class="mute">ASSUMPTION</span></li>
+          <li>Return haircut: <strong>3%</strong> of sale <span class="mute">ESTIMATE</span></li>
+        </ul>
+      </div>
+      <form id="calc-form" class="card" style="margin-top: 1rem">
+        <label for="acquire">
+          <strong>What you pay today</strong> (ask + tax if any)
+        </label>
+        <p>
+          <input
+            id="acquire"
+            name="acquire"
+            type="number"
+            min="0"
+            step="0.01"
+            value="209"
+            style="font-size: 1.1rem; padding: 0.4rem; width: 8rem"
+          />
+          USD
+        </p>
+        <label for="sell">
+          <strong>Future completed sale</strong> (not an ask)
+        </label>
+        <p>
+          <input
+            id="sell"
+            name="sell"
+            type="number"
+            min="0"
+            step="0.01"
+            value="150"
+            style="font-size: 1.1rem; padding: 0.4rem; width: 8rem"
+          />
+          USD
+        </p>
+        <button type="button" class="btn" id="calc-btn">Run estimate</button>
+      </form>
+      <div class="grid three" id="results" style="margin-top: 1.5rem">
+        <div class="card">
+          <h3>Estimated net</h3>
+          <p id="net-out">≈ <strong>−$94</strong> <span class="mute">ESTIMATE</span></p>
+        </div>
+        <div class="card">
+          <h3>Break-even sale</h3>
+          <p id="breakeven-out">≈ <strong>$263</strong> <span class="mute">ESTIMATE</span></p>
+        </div>
+        <div class="card">
+          <h3>Verdict shape</h3>
+          <p id="verdict-out"><strong>Loss likely</strong> under inputs</p>
+        </div>
+      </div>
+      <h2>30th Celebration example</h2>
+      <p>
+        Street date <strong>16 September 2026</strong>
+        <span class="mute">(FACT — TPCi 30 Jun 2026 alert)</span>. Official MSRP for
+        the ETB was <strong>not listed</strong> in that alert. Community $49.99 figures
+        are <span class="mute">COMMUNITY-REPORTED</span>.
+      </p>
+      <p>
+        <a href="./pe-01.html">Read the full 21 Aug 2026 brief</a> or get the dated
+        worksheet with checklist ($9 Polar, file delivery).
+      </p>
+      <p class="note">
+        Follow <a href="https://t.me/AlphaAORE">@AlphaAORE</a> for educational notes —
+        not restock pings.
+      </p>
+    </main>
+    <footer class="site-footer">
+      <nav aria-label="Footer">
+        <a href="./index.html">About</a>
+        <a href="./pe-01.html">30th brief</a>
+        <a href="./calculator.html">Calculator</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+      <p class="mute">© 2026 Alpha AORE · Not financial advice · Not Merist</p>
+    </footer>
+    <script>
+      function estimateNet(acquire, sell) {
+        var fee = sell * 0.136 + 0.4;
+        var ret = sell * 0.03;
+        var ship = 10;
+        return sell - fee - ret - ship - acquire;
+      }
+      function breakEven(acquire) {
+        return (acquire + 10.4) / 0.834;
+      }
+      function fmtMoney(n) {
+        var sign = n < 0 ? "−" : "+";
+        return sign + "$" + Math.abs(n).toFixed(0);
+      }
+      function run() {
+        var acquire = parseFloat(document.getElementById("acquire").value) || 0;
+        var sell = parseFloat(document.getElementById("sell").value) || 0;
+        var net = estimateNet(acquire, sell);
+        var be = breakEven(acquire);
+        document.getElementById("net-out").innerHTML =
+          "≈ <strong>" + fmtMoney(net) + "</strong> <span class=\"mute\">ESTIMATE</span>";
+        document.getElementById("breakeven-out").innerHTML =
+          "≈ <strong>$" + be.toFixed(0) + "</strong> <span class=\"mute\">ESTIMATE</span>";
+        var verdict =
+          net >= 25
+            ? "<strong>Positive spread</strong> under model — verify with real solds"
+            : net >= 0
+              ? "<strong>Thin margin</strong> — fees and time may erase it"
+              : "<strong>Loss likely</strong> under inputs";
+        document.getElementById("verdict-out").innerHTML = verdict;
+      }
+      document.getElementById("calc-btn").addEventListener("click", run);
+      run();
+    </script>
+  </body>
+</html>
