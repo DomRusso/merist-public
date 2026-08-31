@@ -12,24 +12,34 @@
     <link rel="icon" href="./merist-mark.svg" type="image/svg+xml" />
   </head>
   <body>
-    <header class="site-header">
+        <header class="app-top">
       <a class="brand" href="./index.html">
-        <img src="./merist-mark.svg" width="36" height="36" alt="" />
-        Merist
+        <img src="./merist-mark.svg" width="34" height="34" alt="" />
+        <span>
+          Merist
+          <span class="brand__sub">Content Intelligence</span>
+        </span>
       </a>
-      <nav aria-label="Primary">
-        <a href="./index.html">Home</a>
-        <a href="./product.html" aria-current="page">Product</a>
-        <a href="./how-it-works.html">How it works</a>
-        <a href="./tiktok.html">TikTok</a>
-        <a href="./platforms.html">Integrations</a>
-        <a href="./security.html">Security</a>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
+      <nav class="legal-links" aria-label="Legal and support">
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./terms.html">Terms of Service</a>
         <a href="./support.html">Support</a>
       </nav>
     </header>
-    <main>
+
+    <nav class="docs-nav" aria-label="Site">
+      <a href="./index.html">Application</a>
+      <a href="./product.html" aria-current="page">Product</a>
+      <a href="./how-it-works.html">How it works</a>
+      <a href="./tiktok.html">TikTok</a>
+      <a href="./platforms.html">Integrations</a>
+      <a href="./security.html">Security</a>
+      <a href="./privacy.html">Privacy</a>
+      <a href="./terms.html">Terms</a>
+      <a href="./support.html">Support</a>
+    </nav>
+
+    <main class="docs-main">
       <p class="kicker">Product</p>
       <h1>What Merist Content Intelligence is</h1>
       <p class="lede">
@@ -88,8 +98,16 @@
         </li>
       </ul>
 
-      <h2>Product preview (not a live dashboard)</h2>
-      <p class="preview-label">Workflow demonstration — labeled preview</p>
+      <h2>Product application</h2>
+      <p>
+        The official public Merist Content Intelligence application experience is on the
+        <a href="./index.html">root Application page</a> — including connected platforms,
+        TikTok Login Kit explanation, analytics, video history, Draft Upload, Direct Post,
+        confirmation, and publishing status models. Demonstration values are labeled.
+      </p>
+
+      <h2>Product preview (workflow)</h2>
+      <p class="preview-label">Workflow demonstration</p>
       <div class="workflow-preview">
         <ol class="steps">
           <li>
@@ -134,10 +152,13 @@
       </ul>
 
       <p class="note">
-        TikTok Content Posting scopes (<code>video.upload</code>,
-        <code>video.publish</code>) are integration capabilities Merist is adding
-        subject to TikTok authorization. Existing analytics/read capabilities are
-        available where the platform and user have already authorized them. See
+        TikTok Content Posting is implemented in Merist Content Intelligence for
+        authorized Draft Upload (<code>video.upload</code>) and Direct Post
+        (<code>video.publish</code>) after explicit confirmation. Production
+        Content Posting audit approval is not claimed until TikTok grants it.
+        Unrestricted autonomous publishing remains disabled. Platform limitations
+        remain authoritative. See the
+        <a href="./index.html#posting">interactive Content Posting panel</a> and
         <a href="./tiktok.html">TikTok integration</a>.
       </p>
 
@@ -148,19 +169,22 @@
         <a href="./privacy.html">Privacy Policy</a>.
       </p>
     </main>
-    <footer class="site-footer">
+        <footer class="app-footer">
       <nav aria-label="Footer">
-        <a href="./index.html">Home</a>
+        <a href="./index.html">Application</a>
         <a href="./product.html">Product</a>
         <a href="./how-it-works.html">How it works</a>
         <a href="./tiktok.html">TikTok</a>
         <a href="./platforms.html">Integrations</a>
         <a href="./security.html">Security</a>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./terms.html">Terms of Service</a>
         <a href="./support.html">Support</a>
       </nav>
-      <p class="mute">© 2026 Merist · Public handle @meristhq</p>
+      <p class="mute">
+        © 2026 Merist · @meristhq · Privacy Policy, Terms of Service, and Support are linked above without requiring a menu.
+      </p>
     </footer>
+
   </body>
 </html>

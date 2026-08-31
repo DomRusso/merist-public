@@ -3,119 +3,546 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Merist — Content Intelligence</title>
+    <title>Merist Content Intelligence</title>
     <meta
       name="description"
-      content="Merist Content Intelligence helps operators research opportunities, create content, connect authorized social accounts, publish where permitted, and measure performance — including TikTok analytics and authorized Content Posting workflows subject to TikTok approval."
+      content="Merist Content Intelligence — authorized analytics, TikTok Login Kit, video history, Draft Upload (video.upload), and Direct Post (video.publish) for connected social accounts. Public reviewer product experience."
     />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="./merist-mark.svg" type="image/svg+xml" />
   </head>
   <body>
-    <header class="site-header">
+    <div class="app-banner" role="status">
+      <strong>Public reviewer mode.</strong>
+      This is the official Merist Content Intelligence product experience.
+      Values marked <span class="demo-tag">Demo example</span> are labeled demonstration data — not live platform API responses.
+      Live OAuth and publish actions run in the operator-hosted Merist application after TikTok authorization.
+    </div>
+
+    <header class="app-top">
       <a class="brand" href="./index.html">
-        <img src="./merist-mark.svg" width="36" height="36" alt="" />
-        Merist
+        <img src="./merist-mark.svg" width="34" height="34" alt="" />
+        <span>
+          Merist
+          <span class="brand__sub">Content Intelligence</span>
+        </span>
       </a>
-      <nav aria-label="Primary">
-        <a href="./index.html" aria-current="page">Home</a>
-        <a href="./product.html">Product</a>
-        <a href="./how-it-works.html">How it works</a>
-        <a href="./tiktok.html">TikTok</a>
-        <a href="./platforms.html">Integrations</a>
-        <a href="./security.html">Security</a>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
+      <nav class="legal-links" aria-label="Legal and support">
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./terms.html">Terms of Service</a>
         <a href="./support.html">Support</a>
       </nav>
     </header>
-    <main class="wide">
-      <p class="kicker">Merist Content Intelligence</p>
-      <h1>Authorized analytics and content publishing for connected social accounts.</h1>
-      <p class="lede">
-        Merist is a media brand that helps operators choose and use AI tools with
-        evidence, not hype. Public content is published as <strong>@meristhq</strong>
-        on YouTube, TikTok, Instagram, and X.
-      </p>
-      <p>
-        Merist Content Intelligence is the product behind that loop. It helps
-        operators identify content opportunities, prepare media, connect social
-        accounts they are authorized to use, publish or upload through official
-        platform authorization where scopes allow, measure performance, and use
-        that evidence to improve the next piece of content.
-      </p>
-      <p class="note">
-        Account connections use each platform’s official authorization (OAuth).
-        Merist does not collect platform passwords. Merist only acts on accounts
-        the user has explicitly authorized, and only within the permissions that
-        user and the platform grant. Merist does not post to arbitrary accounts.
-      </p>
 
-      <div class="toc" aria-label="On this site">
-        <h2>Product site map</h2>
-        <ul>
-          <li><a href="./product.html">Product &amp; features</a> — what Merist Content Intelligence does</li>
-          <li><a href="./how-it-works.html">How it works</a> — research → create → publish → measure → optimize</li>
-          <li><a href="./tiktok.html">TikTok integration</a> — OAuth, scopes, analytics, upload &amp; Direct Post</li>
-          <li><a href="./platforms.html">Supported integrations</a> — YouTube, TikTok, Instagram, X</li>
-          <li><a href="./security.html">Security &amp; data handling</a> — tokens, revocation, boundaries</li>
-          <li><a href="./privacy.html">Privacy Policy</a> · <a href="./terms.html">Terms of Service</a> · <a href="./support.html">Support / contact</a></li>
-        </ul>
-      </div>
+    <div class="app-shell">
+      <nav class="app-nav" aria-label="Product">
+        <h2>Application</h2>
+        <a href="#overview" data-view="overview" class="is-active">Overview</a>
+        <a href="#platforms" data-view="platforms">Connected platforms</a>
+        <a href="#tiktok" data-view="tiktok">TikTok</a>
+        <a href="#posting" data-view="posting">Content Posting</a>
+        <a href="#analytics" data-view="analytics">Analytics</a>
+        <a href="#videos" data-view="videos">Video history</a>
+        <a href="#workflow" data-view="workflow">How it works</a>
+        <a href="#security" data-view="security">Security</a>
+        <h2>Site</h2>
+        <a href="./product.html">Product details</a>
+        <a href="./how-it-works.html">Workflow guide</a>
+        <a href="./tiktok.html">TikTok docs</a>
+        <a href="./platforms.html">Integrations</a>
+        <a href="./security.html">Security page</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./support.html">Support</a>
+      </nav>
 
-      <h2>Core capabilities</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Connect authorized accounts</h3>
-          <p>The account owner signs in with the platform and grants the scopes Merist needs for analytics and, when approved, publishing or upload.</p>
-        </article>
-        <article class="card">
-          <h3>Create and prepare content</h3>
-          <p>Operators move from opportunity research to scripted, media-ready content intended for supported platforms.</p>
-        </article>
-        <article class="card">
-          <h3>Authorized publish / upload</h3>
-          <p>Where platform approval and user consent allow, Merist can upload drafts or publish to the connected profile — never to accounts that did not authorize the app.</p>
-        </article>
-        <article class="card">
-          <h3>Measure and learn</h3>
-          <p>Permitted performance data is organized so operators can compare posts and improve the next cycle. Missing metrics stay missing.</p>
-        </article>
-      </div>
+      <main class="app-main" id="app-root">
+        <!-- OVERVIEW -->
+        <section class="view is-active" id="view-overview" data-view-panel="overview">
+          <div class="hero">
+            <p class="kicker">Merist · Content Intelligence</p>
+            <h1>Content operations for authorized connected accounts</h1>
+            <p>
+              Merist Content Intelligence helps operators research opportunities, prepare media,
+              connect social accounts they own or are authorized to use, retrieve permitted
+              analytics, and — where scopes allow — perform Draft Upload or Direct Post through
+              official platform authorization.
+            </p>
+            <p>
+              Public brand handle: <strong>@meristhq</strong> on YouTube, TikTok, Instagram, and X.
+            </p>
+          </div>
 
-      <div class="callout">
-        <h2>TikTok status (honest)</h2>
-        <p>
-          <span class="pill">Analytics</span>
-          Where TikTok has authorized the app and the user has connected their account, Merist can use permitted profile, stats, and video-list data for performance workflows.
-        </p>
-        <p>
-          <span class="pill">Content Posting</span>
-          Merist is adding TikTok Direct Post (<code>video.publish</code>) and upload (<code>video.upload</code>) as an integration capability. Live use of those publishing scopes depends on TikTok’s authorization and the user’s granted permissions. This site does not claim those posting scopes are already approved if review is still pending.
-        </p>
-        <p><a class="btn" href="./tiktok.html">TikTok integration details</a> <a class="btn secondary" href="./how-it-works.html">Full workflow</a></p>
-      </div>
+          <div class="panel">
+            <h2>Product dashboard</h2>
+            <p class="lead">
+              Same capability surface as the operator Merist Content Intelligence application.
+              Public site cannot safely expose live OAuth tokens; interactive controls below use
+              honest reviewer/demo mode.
+            </p>
+            <div class="tiles">
+              <div class="tile">
+                <div class="tile__label">Connected platforms</div>
+                <div class="tile__value">4</div>
+                <div class="tile__hint"><span class="demo-tag">Demo example</span></div>
+              </div>
+              <div class="tile">
+                <div class="tile__label">TikTok Login Kit</div>
+                <div class="tile__value">Ready</div>
+                <div class="tile__hint">OAuth + Display scopes</div>
+              </div>
+              <div class="tile">
+                <div class="tile__label">Draft Upload</div>
+                <div class="tile__value">video.upload</div>
+                <div class="tile__hint">Authorized path</div>
+              </div>
+              <div class="tile">
+                <div class="tile__label">Direct Post</div>
+                <div class="tile__value">video.publish</div>
+                <div class="tile__hint">Confirm + restrictions</div>
+              </div>
+              <div class="tile">
+                <div class="tile__label">Autonomous publish</div>
+                <div class="tile__value">Disabled</div>
+                <div class="tile__hint">Never unrestricted</div>
+              </div>
+              <div class="tile">
+                <div class="tile__label">Production audit</div>
+                <div class="tile__value">Pending</div>
+                <div class="tile__hint">Not claimed approved</div>
+              </div>
+            </div>
+          </div>
 
-      <p>
-        <a class="cta" href="./product.html">Product details</a>
-        <a class="cta" href="./platforms.html">Integrations</a>
-        <a class="cta" href="./security.html">Security</a>
-        <a class="cta" href="./support.html">Support</a>
-      </p>
-    </main>
-    <footer class="site-footer">
+          <div class="grid-2">
+            <div class="panel">
+              <h2>Core loop</h2>
+              <ol class="steps">
+                <li><span class="step-num">1</span><div><strong>Research</strong><br />Identify content opportunities with evidence, not hype.</div></li>
+                <li><span class="step-num">2</span><div><strong>Create</strong><br />Script and prepare media for supported platforms.</div></li>
+                <li><span class="step-num">3</span><div><strong>Connect</strong><br />Account owner authorizes Merist via official OAuth / Login Kit.</div></li>
+                <li><span class="step-num">4</span><div><strong>Publish / upload</strong><br />Draft Upload or Direct Post only after explicit confirmation and granted scopes.</div></li>
+                <li><span class="step-num">5</span><div><strong>Measure &amp; learn</strong><br />Use permitted analytics and video history to improve the next cycle.</div></li>
+              </ol>
+            </div>
+            <div class="panel">
+              <h2>Authorization model</h2>
+              <ul class="stats">
+                <li><span class="label">Passwords</span> Never collected — platform OAuth only</li>
+                <li><span class="label">Accounts</span> Only accounts the user explicitly authorizes</li>
+                <li><span class="label">Analytics</span> Where granted (profile, stats, video.list)</li>
+                <li><span class="label">Draft Upload</span> Under <code>video.upload</code> after confirm</li>
+                <li><span class="label">Direct Post</span> Under <code>video.publish</code> after confirm</li>
+                <li><span class="label">Revocation</span> Disconnect in Merist or revoke in TikTok settings</li>
+              </ul>
+              <p class="notice">
+                Platform limitations remain authoritative. Unaudited Direct Post remains subject to
+                TikTok restrictions (for example SELF_ONLY / private). Unrestricted autonomous
+                TikTok publishing remains disabled.
+              </p>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2>Jump to product areas</h2>
+            <p>
+              <button type="button" class="btn" data-goto="tiktok">Open TikTok area</button>
+              <button type="button" class="btn btn--secondary" data-goto="posting">Content Posting panel</button>
+              <button type="button" class="btn btn--ghost" data-goto="platforms">Platforms</button>
+              <a class="btn btn--ghost" href="./privacy.html">Privacy Policy</a>
+              <a class="btn btn--ghost" href="./terms.html">Terms of Service</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- PLATFORMS -->
+        <section class="view" id="view-platforms" data-view-panel="platforms">
+          <div class="hero">
+            <p class="kicker">Connected platforms</p>
+            <h1>Official authorization per platform</h1>
+            <p>
+              Merist connects only accounts the operator is authorized to use. Each platform uses
+              its own OAuth / Login Kit. Scopes differ by platform and approval state.
+            </p>
+          </div>
+          <div class="panel">
+            <div class="platform-row">
+              <div>
+                <strong>TikTok</strong>
+                <span class="meta">Login Kit · Display API · Content Posting API</span>
+              </div>
+              <div>
+                <span class="pill pill--ok">Connect path</span>
+                <span class="pill pill--warn">Audit pending</span>
+              </div>
+              <div class="meta">
+                Scopes: user.info.basic, user.info.stats, video.list, video.upload, video.publish
+              </div>
+            </div>
+            <div class="platform-row">
+              <div>
+                <strong>YouTube</strong>
+                <span class="meta">Google OAuth · Analytics / upload where granted</span>
+              </div>
+              <div><span class="pill">Authorized path</span></div>
+              <div class="meta">Connected-account analytics and publish paths when scopes allow</div>
+            </div>
+            <div class="platform-row">
+              <div>
+                <strong>Instagram</strong>
+                <span class="meta">Meta authorization · operations where granted</span>
+              </div>
+              <div><span class="pill">Authorized path</span></div>
+              <div class="meta">Account connection + permitted operations only</div>
+            </div>
+            <div class="platform-row">
+              <div>
+                <strong>X</strong>
+                <span class="meta">OAuth 2.0 PKCE · Merist @meristhq</span>
+              </div>
+              <div><span class="pill">Authorized path</span></div>
+              <div class="meta">Bound identity; writes remain separately gated</div>
+            </div>
+            <p class="notice">
+              Status chips describing live connection state on this public page are
+              <span class="demo-tag">Demo example</span> illustrations of the product model.
+              They are not live API health checks.
+            </p>
+            <p><a href="./platforms.html">Full integrations documentation →</a></p>
+          </div>
+        </section>
+
+        <!-- TIKTOK -->
+        <section class="view" id="view-tiktok" data-view-panel="tiktok">
+          <div class="hero">
+            <p class="kicker">TikTok integration</p>
+            <h1>Login Kit, profile, analytics, and Content Posting</h1>
+            <p>
+              An authorized TikTok user connects via TikTok’s official authorization screen.
+              Merist then uses only the scopes TikTok and that user approve.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h2>Login Kit · connection workflow</h2>
+            <ol class="steps">
+              <li><span class="step-num">1</span><div>Operator starts <strong>Connect TikTok</strong> inside Merist.</div></li>
+              <li><span class="step-num">2</span><div>TikTok shows the official authorization screen with requested scopes.</div></li>
+              <li><span class="step-num">3</span><div>Account owner approves or denies. Merist never collects the TikTok password.</div></li>
+              <li><span class="step-num">4</span><div>Granted capabilities apply only to that connected account.</div></li>
+              <li><span class="step-num">5</span><div>Owner can revoke in TikTok settings; operator can disconnect in Merist.</div></li>
+            </ol>
+            <button type="button" class="btn" id="btn-connect-tiktok">Connect TikTok (reviewer explain)</button>
+            <button type="button" class="btn btn--secondary" id="btn-disconnect-tiktok">Disconnect / revoke explanation</button>
+            <div id="tiktok-connect-notice" class="notice" hidden></div>
+          </div>
+
+          <div class="grid-2">
+            <div class="panel">
+              <h2>Profile / account information</h2>
+              <p class="lead"><code>user.info.basic</code> — identify the authorized profile.</p>
+              <ul class="stats">
+                <li><span class="label">Handle</span> @meristhq <span class="demo-tag">Demo example</span></li>
+                <li><span class="label">Display name</span> Merist <span class="demo-tag">Demo example</span></li>
+                <li><span class="label">Connection</span> Authorized OAuth session model</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h2>Account statistics</h2>
+              <p class="lead"><code>user.info.stats</code> — account-level stats TikTok returns.</p>
+              <ul class="stats">
+                <li><span class="label">Followers</span> Example value only <span class="demo-tag">Demo example</span></li>
+                <li><span class="label">Likes</span> Example value only <span class="demo-tag">Demo example</span></li>
+                <li><span class="label">Missing fields</span> Stay blank — never invented</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2>Requested TikTok scopes</h2>
+            <dl class="scope-list">
+              <dt><code>user.info.basic</code></dt>
+              <dd>Authorized profile identity and basic account information.</dd>
+              <dt><code>user.info.stats</code></dt>
+              <dd>Account-level performance / statistical data available through TikTok.</dd>
+              <dt><code>video.list</code></dt>
+              <dd>Authorized account video information for history and performance workflows.</dd>
+              <dt><code>video.upload</code></dt>
+              <dd>Draft Upload of authorized content to the TikTok inbox for creator review.</dd>
+              <dt><code>video.publish</code></dt>
+              <dd>Direct Post to the connected profile after explicit confirmation and granted permissions.</dd>
+            </dl>
+            <p><a href="./tiktok.html">Extended TikTok documentation →</a></p>
+          </div>
+        </section>
+
+        <!-- CONTENT POSTING -->
+        <section class="view" id="view-posting" data-view-panel="posting">
+          <div class="hero">
+            <p class="kicker">TikTok Content Posting</p>
+            <h1>Draft Upload · Direct Post · confirmation · status</h1>
+            <p>
+              Separate from analytics Connect. Uses Content Posting API scopes
+              <code>video.upload</code> and <code>video.publish</code>. Autonomous unrestricted
+              publishing stays disabled.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h2>Arming map · observe before submit</h2>
+            <ol class="steps">
+              <li><span class="step-num">1</span><div>Sandbox / app credentials configured in the operator environment</div></li>
+              <li><span class="step-num">2</span><div>Publish scopes <code>video.upload</code> / <code>video.publish</code> granted</div></li>
+              <li><span class="step-num">3</span><div>Connection publish-authorized (upgrade path when needed)</div></li>
+              <li><span class="step-num">4</span><div>Draft Upload / Direct Post status reads ready</div></li>
+              <li><span class="step-num">5</span><div>Operator checkbox confirmation on this panel</div></li>
+              <li><span class="step-num">6</span><div>Autonomous publish remains <strong>disabled</strong></div></li>
+            </ol>
+            <p class="notice notice--warn">
+              Ready ≠ public Production Content Posting approval. This site does <strong>not</strong>
+              claim the Production Content Posting revision is approved until TikTok actually approves it.
+              Unaudited Direct Post remains subject to TikTok restrictions (SELF_ONLY / private).
+            </p>
+          </div>
+
+          <div class="panel">
+            <h2>Content Posting status</h2>
+            <ul class="stats">
+              <li><span class="label">Draft Upload</span> Authorized under <code>video.upload</code></li>
+              <li><span class="label">Direct Post</span> Authorized under <code>video.publish</code></li>
+              <li><span class="label">Publishing mode</span> Manual confirm · not autonomous</li>
+              <li><span class="label">Autonomous</span> Disabled</li>
+              <li><span class="label">Public live API</span> Not exposed on this static site</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h2>Creator settings / permissions model</h2>
+            <p class="lead">
+              Creator Info (query) drives privacy options and interaction toggles before Direct Post.
+            </p>
+            <ul class="stats">
+              <li><span class="label">Username</span> meristhq <span class="demo-tag">Demo example</span></li>
+              <li><span class="label">Privacy options</span> SELF_ONLY (and platform-returned options)</li>
+              <li><span class="label">Comments / Duet / Stitch</span> Respect creator-disabled flags</li>
+            </ul>
+          </div>
+
+          <div class="panel" id="draft-upload-panel">
+            <h2>Draft Upload workflow · <code>video.upload</code></h2>
+            <p class="lead">
+              Uploads authorized media to the connected TikTok inbox for further creator review.
+            </p>
+            <label class="check">
+              <input type="checkbox" id="confirm-draft" />
+              <span>
+                I authorize Draft Upload of the dedicated test video to the TikTok inbox for the
+                connected authorized account.
+              </span>
+            </label>
+            <button type="button" class="btn" id="btn-draft" disabled>Submit Draft Upload</button>
+            <div id="draft-result" class="notice" hidden></div>
+          </div>
+
+          <div class="panel" id="direct-post-panel">
+            <h2>Direct Post workflow · <code>video.publish</code></h2>
+            <div class="form-grid">
+              <label class="field">
+                Title / caption
+                <textarea id="direct-title" rows="3">Merist Content Posting API test — private sandbox demo. Not a scheduled Merist drop.</textarea>
+              </label>
+              <label class="field">
+                Privacy level (from Creator Info)
+                <select id="direct-privacy">
+                  <option value="SELF_ONLY" selected>SELF_ONLY</option>
+                </select>
+              </label>
+              <label class="check"><input type="checkbox" id="disable-comment" /> Disable comments</label>
+              <label class="check"><input type="checkbox" id="disable-duet" /> Disable duet</label>
+              <label class="check"><input type="checkbox" id="disable-stitch" /> Disable stitch</label>
+              <label class="check">
+                <input type="checkbox" id="confirm-direct" />
+                <span>
+                  I confirm Direct Post to the connected authorized account with the settings above.
+                  This authorizes the actual publish action.
+                </span>
+              </label>
+            </div>
+            <button type="button" class="btn" id="btn-direct" disabled>Submit Direct Post</button>
+            <div id="direct-result" class="notice" hidden></div>
+          </div>
+
+          <div class="panel">
+            <h2>Publishing status / results model</h2>
+            <p class="lead">
+              Operator-hosted Merist records publish status and publish_id from TikTok.
+              Below: real Sandbox evidence from an authorized Merist Content Posting test
+              (not re-executed on this public page; not fabricated).
+            </p>
+            <ul class="stats">
+              <li>
+                <span class="label">Draft Upload</span>
+                <code>sent_to_inbox</code> ·
+                <code>v_inbox_file~v2.7678174022768592926</code>
+              </li>
+              <li>
+                <span class="label">Direct Post</span>
+                <code>published_private</code> · <code>SELF_ONLY</code> ·
+                <code>v_pub_file~v2-1.7678176552919648287</code>
+              </li>
+            </ul>
+            <p class="notice notice--ok">
+              These publish_ids are genuine TikTok Sandbox results from Merist’s Content Posting
+              implementation. Public reviewer mode does not call TikTok from GitHub Pages.
+            </p>
+          </div>
+        </section>
+
+        <!-- ANALYTICS -->
+        <section class="view" id="view-analytics" data-view-panel="analytics">
+          <div class="hero">
+            <p class="kicker">Analytics</p>
+            <h1>Authorized performance intelligence</h1>
+            <p>
+              Where TikTok (or another platform) has authorized the app and the user has connected
+              their account, Merist organizes permitted profile, stats, and content metrics.
+              Unavailable numbers stay N/A.
+            </p>
+          </div>
+          <div class="panel">
+            <div class="tiles">
+              <div class="tile">
+                <div class="tile__label">Profile</div>
+                <div class="tile__value">user.info.basic</div>
+                <div class="tile__hint">When granted</div>
+              </div>
+              <div class="tile">
+                <div class="tile__label">Account stats</div>
+                <div class="tile__value">user.info.stats</div>
+                <div class="tile__hint">When granted</div>
+              </div>
+              <div class="tile">
+                <div class="tile__label">Video list</div>
+                <div class="tile__value">video.list</div>
+                <div class="tile__hint">When granted</div>
+              </div>
+              <div class="tile">
+                <div class="tile__label">Missing metrics</div>
+                <div class="tile__value">N/A</div>
+                <div class="tile__hint">Never invented</div>
+              </div>
+            </div>
+            <p class="notice">
+              Sample metric tiles on the public site are labeled demonstration examples.
+              Live analytics require an authorized connected session in the operator-hosted app.
+            </p>
+          </div>
+        </section>
+
+        <!-- VIDEOS -->
+        <section class="view" id="view-videos" data-view-panel="videos">
+          <div class="hero">
+            <p class="kicker">Video history</p>
+            <h1><code>video.list</code> content history</h1>
+            <p>
+              Merist retrieves the authorized account’s TikTok video information for history and
+              performance workflows when <code>video.list</code> is granted.
+            </p>
+          </div>
+          <div class="panel">
+            <div class="table-wrap">
+              <table class="data">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Views</th>
+                    <th>Source</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Example content item A</td>
+                    <td>Published</td>
+                    <td>N/A until measured</td>
+                    <td><span class="demo-tag">Demo example</span></td>
+                  </tr>
+                  <tr>
+                    <td>Example content item B</td>
+                    <td>Draft / inbox path</td>
+                    <td>N/A</td>
+                    <td><span class="demo-tag">Demo example</span></td>
+                  </tr>
+                  <tr>
+                    <td>Sandbox Direct Post evidence</td>
+                    <td>published_private · SELF_ONLY</td>
+                    <td>Private visibility</td>
+                    <td>Real Sandbox publish_id retained in Content Posting panel</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- WORKFLOW -->
+        <section class="view" id="view-workflow" data-view-panel="workflow">
+          <div class="hero">
+            <p class="kicker">How it works</p>
+            <h1>Research → create → authorize → publish → measure</h1>
+          </div>
+          <div class="panel">
+            <ol class="steps">
+              <li><span class="step-num">1</span><div><strong>Opportunity research</strong> — choose topics with evidence.</div></li>
+              <li><span class="step-num">2</span><div><strong>Create &amp; prepare</strong> — scripts and media for the destination format.</div></li>
+              <li><span class="step-num">3</span><div><strong>Authorize</strong> — Login Kit / OAuth for each platform; scopes explicit.</div></li>
+              <li><span class="step-num">4</span><div><strong>Draft Upload or Direct Post</strong> — only after confirmation; only on authorized accounts.</div></li>
+              <li><span class="step-num">5</span><div><strong>Status &amp; results</strong> — publish_id / status from the platform.</div></li>
+              <li><span class="step-num">6</span><div><strong>Analytics &amp; learning</strong> — permitted metrics feed the next cycle.</div></li>
+            </ol>
+            <p><a href="./how-it-works.html">Full workflow documentation →</a></p>
+          </div>
+        </section>
+
+        <!-- SECURITY -->
+        <section class="view" id="view-security" data-view-panel="security">
+          <div class="hero">
+            <p class="kicker">Security</p>
+            <h1>Tokens, revocation, and action boundaries</h1>
+          </div>
+          <div class="panel">
+            <ul>
+              <li>Authorization happens on the platform’s own pages (TikTok Login Kit / OAuth).</li>
+              <li>Merist does not collect platform passwords.</li>
+              <li>Access / refresh tokens are handled on Merist servers — not exposed on this public site.</li>
+              <li>Actions stay within granted scopes on the connected account only.</li>
+              <li>Users can disconnect in Merist or revoke the app in TikTok account settings.</li>
+              <li>Unrestricted autonomous TikTok publishing remains disabled.</li>
+            </ul>
+            <p><a href="./security.html">Security documentation →</a></p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="app-footer">
       <nav aria-label="Footer">
-        <a href="./index.html">Home</a>
+        <a href="./index.html">Application</a>
         <a href="./product.html">Product</a>
         <a href="./how-it-works.html">How it works</a>
         <a href="./tiktok.html">TikTok</a>
         <a href="./platforms.html">Integrations</a>
         <a href="./security.html">Security</a>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./terms.html">Terms of Service</a>
         <a href="./support.html">Support</a>
       </nav>
-      <p class="mute">© 2026 Merist · Public handle @meristhq</p>
+      <p class="mute">
+        © 2026 Merist · @meristhq · Official product website for Merist Content Intelligence.
+        Privacy Policy, Terms of Service, and Support are linked above without requiring a menu.
+      </p>
     </footer>
+
+    <script src="./app.js" defer></script>
   </body>
 </html>
