@@ -96,7 +96,8 @@ code {
   gap: 0.35rem 0.9rem;
   font-size: 0.88rem;
 }
-.legal-links a {
+.legal-links a,
+.legal-bar a {
   color: var(--text);
   text-decoration: none;
   font-weight: 600;
@@ -104,9 +105,24 @@ code {
   border-bottom: 2px solid transparent;
 }
 .legal-links a:hover,
-.legal-links a[aria-current="page"] {
+.legal-links a[aria-current="page"],
+.legal-bar a:hover,
+.legal-bar a[aria-current="page"] {
   color: var(--accent-2);
   border-bottom-color: var(--accent);
+}
+.legal-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.25rem;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid var(--line-strong);
+  background: rgba(18, 21, 28, 0.95);
+  position: sticky;
+  top: 3.35rem;
+  z-index: 35;
+  font-size: 0.92rem;
 }
 
 /* —— App shell —— */

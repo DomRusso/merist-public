@@ -151,5 +151,11 @@
     wireNav();
     wireTikTokConnect();
     wirePosting();
+    window.addEventListener("hashchange", function () {
+      var hash = (location.hash || "").replace(/^#/, "");
+      if (hash && document.querySelector('[data-view-panel="' + hash + '"]')) {
+        showView(hash);
+      }
+    });
   });
 })();
