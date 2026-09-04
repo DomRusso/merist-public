@@ -1,0 +1,34 @@
+{
+  "mode": "owned_non_affiliate",
+  "status": "non_affiliate_public_destinations",
+  "note": "Swap destination_url to an affiliate link ONLY after program approval. Do not claim affiliation in copy until then.",
+  "measurement_id": "G-SP5417P9L1",
+  "event_real": "merist_go_click",
+  "event_test": "merist_go_click_test",
+  "destinations": [
+    {
+      "vendor": "make",
+      "label": "Make",
+      "destination_url": "https://www.make.com/en",
+      "fit_rank": 1
+    },
+    {
+      "vendor": "n8n",
+      "label": "n8n Cloud",
+      "destination_url": "https://n8n.io/",
+      "fit_rank": 2
+    },
+    {
+      "vendor": "notion",
+      "label": "Notion",
+      "destination_url": "https://www.notion.com/",
+      "fit_rank": 3
+    },
+    {
+      "vendor": "jasper",
+      "label": "Jasper",
+      "destination_url": "https://www.jasper.ai/",
+      "fit_rank": 4
+    }
+  ]
+}

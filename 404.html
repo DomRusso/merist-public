@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Merist — page routing</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./merist-mark.svg" type="image/svg+xml" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP5417P9L1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-SP5417P9L1", { anonymize_ip: true });
+    </script>
+    <style>
+      .go-wrap { max-width: 42rem; margin: 4rem auto; padding: 0 1.25rem; }
+      .go-status { background: var(--bg-panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem 1.4rem; }
+      .go-status--ok { border-color: rgba(62, 207, 142, 0.35); }
+      .go-status--warn { border-color: rgba(240, 180, 41, 0.45); }
+      .go-status--error { border-color: rgba(232, 93, 93, 0.45); }
+      .go-status--info { border-color: var(--line-strong); }
+      .go-muted { color: var(--text-2); }
+    </style>
+  </head>
+  <body>
+    <main class="go-wrap">
+      <div id="go-status" class="go-status go-status--info" role="status">
+        <h1 id="go-title">Checking link…</h1>
+        <p id="go-body" class="go-muted">
+          If this is not a Merist /go measurement link, the page was not found.
+          <a href="./index.html">Return home</a>.
+        </p>
+      </div>
+    </main>
+    <script src="./go/go.js"></script>
+    <script>
+      (function () {
+        var path = window.location.pathname || "";
+        var marker = "/go/";
+        var idx = path.toLowerCase().indexOf(marker);
+        if (idx < 0) {
+          document.getElementById("go-title").textContent = "Page not found";
+          return;
+        }
+        var parts = path
+          .slice(idx + marker.length)
+          .split("/")
+          .filter(function (p) {
+            return p && p.toLowerCase() !== "index.html";
+          });
+        var vendor = (parts[0] || "").toLowerCase();
+        var contentId = parts[1] || "";
+        if (!vendor) {
+          document.getElementById("go-title").textContent = "Page not found";
+          return;
+        }
+        // Preserve path content_id via query so go.js resolves it even when
+        // GitHub Pages served this 404.html for /go/{vendor}/{content_id}.
+        if (contentId) {
+          var url = new URL(window.location.href);
+          if (!url.searchParams.get("content_id") && !url.searchParams.get("c")) {
+            url.searchParams.set("content_id", contentId);
+            history.replaceState(null, "", url.toString());
+          }
+        }
+        window.MeristGo.run({
+          vendorHint: vendor,
+          destinationsUrl: "./go/destinations.json",
+        });
+      })();
+    </script>
+  </body>
+</html>

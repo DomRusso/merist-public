@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Merist /go — commercial-interest measurement</title>
+    <meta
+      name="description"
+      content="Owned Merist measurement redirect. Independent editorial links to public tool pages. No affiliate relationship is claimed."
+    />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" href="../merist-mark.svg" type="image/svg+xml" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP5417P9L1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-SP5417P9L1", { anonymize_ip: true });
+    </script>
+    <style>
+      .go-wrap { max-width: 42rem; margin: 4rem auto; padding: 0 1.25rem; }
+      .go-status { background: var(--bg-panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem 1.4rem; }
+      .go-status--ok { border-color: rgba(62, 207, 142, 0.35); }
+      .go-status--warn { border-color: rgba(240, 180, 41, 0.45); }
+      .go-status--error { border-color: rgba(232, 93, 93, 0.45); }
+      .go-status--info { border-color: var(--line-strong); }
+      .go-muted { color: var(--text-2); font-size: 0.95rem; }
+      .go-mono { font-family: var(--mono); font-size: 0.85rem; color: var(--text-3); }
+    </style>
+  </head>
+  <body>
+    <header class="app-top">
+      <a class="brand" href="../index.html">
+        <img src="../merist-mark.svg" width="34" height="34" alt="" />
+        <span>Merist <span class="brand__sub">/go</span></span>
+      </a>
+    </header>
+    <main class="go-wrap">
+      <p class="kicker">Owned measurement · non-affiliate mode</p>
+      <div id="go-status" class="go-status go-status--info" role="status">
+        <h1 id="go-title">Merist /go</h1>
+        <p id="go-body" class="go-muted">
+          Use
+          <code class="go-mono">/go/{vendor}/{content_id}</code>
+          or query params
+          <code class="go-mono">vendor</code>,
+          <code class="go-mono">content_id</code>,
+          <code class="go-mono">platform</code>,
+          <code class="go-mono">placement</code>.
+          Operator tests: add <code class="go-mono">test=1</code>.
+        </p>
+      </div>
+      <p class="go-muted" style="margin-top: 1rem">
+        Analytics: Google Analytics 4 event
+        <code class="go-mono">merist_go_click</code>
+        (tests:
+        <code class="go-mono">merist_go_click_test</code>).
+        This path measures voluntary outbound commercial interest only.
+      </p>
+    </main>
+    <script src="./go.js"></script>
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search || "");
+        var parts = (window.location.pathname || "").split("/").filter(Boolean);
+        var hasVendor =
+          params.get("vendor") ||
+          params.get("v") ||
+          params.get("utm_campaign") ||
+          (parts.indexOf("go") >= 0 && parts[parts.indexOf("go") + 1]);
+        var hasContent =
+          params.get("content_id") ||
+          params.get("c") ||
+          params.get("utm_content") ||
+          (parts.indexOf("go") >= 0 && parts[parts.indexOf("go") + 2]);
+        if (hasVendor && hasContent) {
+          window.MeristGo.run({ destinationsUrl: "./destinations.json" });
+        }
+      })();
+    </script>
+  </body>
+</html>
