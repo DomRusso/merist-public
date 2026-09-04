@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Merist — page routing</title>
     <meta name="robots" content="noindex,nofollow" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="icon" href="./merist-mark.svg" type="image/svg+xml" />
+    <base href="/merist-public/" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="merist-mark.svg" type="image/svg+xml" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP5417P9L1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -30,11 +31,11 @@
         <h1 id="go-title">Checking link…</h1>
         <p id="go-body" class="go-muted">
           If this is not a Merist /go measurement link, the page was not found.
-          <a href="./index.html">Return home</a>.
+          <a href="index.html">Return home</a>.
         </p>
       </div>
     </main>
-    <script src="./go/go.js"></script>
+    <script src="go/go.js"></script>
     <script>
       (function () {
         var path = window.location.pathname || "";
@@ -67,7 +68,7 @@
         }
         window.MeristGo.run({
           vendorHint: vendor,
-          destinationsUrl: "./go/destinations.json",
+          destinationsUrl: "go/destinations.json",
         });
       })();
     </script>
