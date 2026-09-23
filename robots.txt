@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://meristhq.com/alpha/sitemap.xml
+Sitemap: https://meristhq.com/alpha/sitemap.txt

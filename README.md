@@ -1,10 +1,10 @@
-# Merist Content Intelligence — public product website
+# Merist HQ — public product website
 
 Official public Merist product presence for reviewers and the public.
 
 ## Application (root)
 
-- [Merist Content Intelligence application](index.html) — reviewer-facing product shell
+- [Merist HQ application](index.html) — reviewer-facing product shell
   (Overview, platforms, TikTok, Content Posting, analytics, video history, security)
 
 ## Documentation pages
@@ -29,11 +29,11 @@ Developer App has an honest Website / Terms / Privacy URL.
 
 ## Public URLs (after push to DomRusso/merist-public)
 
-- `https://domrusso.github.io/merist-public/`
-- `https://domrusso.github.io/merist-public/tiktok.html`
-- `https://domrusso.github.io/merist-public/privacy.html`
-- `https://domrusso.github.io/merist-public/terms.html`
-- `https://domrusso.github.io/merist-public/support.html`
+- `https://meristhq.com/`
+- `https://meristhq.com/tiktok.html`
+- `https://meristhq.com/privacy.html`
+- `https://meristhq.com/terms.html`
+- `https://meristhq.com/support.html`
 
 ## Honesty
 

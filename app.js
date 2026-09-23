@@ -1,5 +1,5 @@
 /**
- * Merist Content Intelligence — public reviewer shell.
+ * Merist HQ — public reviewer shell.
  * Honest demo mode: no live TikTok API, no secrets, no fake production approval.
  */
 (function () {
@@ -70,7 +70,7 @@
       connect.addEventListener("click", function () {
         setNotice(
           notice,
-          "<strong>Login Kit workflow (operator-hosted app):</strong> Merist redirects the account owner to TikTok’s official authorization screen requesting <code>user.info.basic</code>, <code>user.info.stats</code>, <code>video.list</code>, and — when Content Posting is in scope — <code>video.upload</code> / <code>video.publish</code>. This public GitHub Pages site does not start a live OAuth session (no client secrets, no token exchange). Reviewers: the UI and confirmation model match the real Merist Content Intelligence product.",
+          "<strong>Login Kit workflow (operator-hosted app):</strong> Merist redirects the account owner to TikTok’s official authorization screen requesting <code>user.info.basic</code>, <code>user.info.stats</code>, <code>video.list</code>, and — when Content Posting is in scope — <code>video.upload</code> / <code>video.publish</code>. This public GitHub Pages site does not start a live OAuth session (no client secrets, no token exchange). Reviewers: the UI and confirmation model match the real Merist HQ product.",
           "warn"
         );
       });
@@ -109,7 +109,7 @@
         setNotice(
           draftResult,
           "<strong>Public reviewer mode — live Draft Upload is not executed from this website.</strong><br />" +
-            "In the operator-hosted Merist Content Intelligence app, confirmed Draft Upload calls TikTok <code>video.upload</code> and records status + publish_id.<br />" +
+            "In the operator-hosted Merist HQ app, confirmed Draft Upload calls TikTok <code>video.upload</code> and records status + publish_id.<br />" +
             "<strong>Real Sandbox evidence (already completed):</strong> status <code>" +
             EVIDENCE.draft.status +
             "</code> · publish_id <code>" +
